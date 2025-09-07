@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口设置，确保在移动设备上正确显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小黑课堂软件简介</title>
+    <!-- 引入Tailwind CSS框架 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome图标库 -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义主题 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // 自定义颜色方案
+                    colors: {
+                        primary: '#3B82F6', // 主色调：蓝色
+                        secondary: '#10B981', // 辅助色：绿色
+                        dark: '#1E293B', // 深色
+                        light: '#F8FAFC' // 浅色
+                    },
+                    // 自定义字体
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- 自定义Tailwind工具类 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+
+<!-- 页面主体 -->
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- 导航栏 - 固定在顶部，滚动时会有样式变化 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- 网站Logo和名称 -->
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-graduation-cap text-primary text-2xl"></i>
+                <h1 class="text-xl md:text-2xl font-bold text-primary">小黑课堂</h1>
+            </div>
+            
+            <!-- 桌面端导航菜单 -->
+            <nav class="hidden md:flex space-x-6">
+				<a href="https://www.xiaoheiketang.com/" class="hover:text-primary transition-colors">小黑课堂网站首页</a>
+				<a href="http://124.222.229.85/DuiHuanMaWeb/admin/allsofts.php" class="hover:text-primary transition-colors">小黑课堂题库下载中心</a>
+            </nav>
+            
+            <!-- 移动端菜单按钮 -->
+            <button class="md:hidden text-gray-600 focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 移动端菜单 (默认隐藏) -->
+    <div id="mobile-menu" class="hidden bg-white shadow-md md:hidden">
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+			<a href="https://www.xiaoheiketang.com/" class="hover:text-primary transition-colors">小黑课堂网站首页</a>
+			<a href="http://124.222.229.85/DuiHuanMaWeb/admin/allsofts.php" class="hover:text-primary transition-colors">小黑课堂题库下载中心</a>
+            <a href="#overview" class="py-2 hover:text-primary transition-colors">平台概述</a>
+            <a href="#courses" class="py-2 hover:text-primary transition-colors">课程资源</a>
+            <a href="#features" class="py-2 hover:text-primary transition-colors">软件功能</a>
+            <a href="#highlights" class="py-2 hover:text-primary transition-colors">软件特色</a>
+        </div>
+    </div>
+
+    <!-- 英雄区域 - 页面顶部的横幅区域 -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-shadow">小黑课堂软件简介</h2>
+                <p class="text-lg md:text-xl opacity-90 mb-8">专为大学生和学习者打造的在线学习平台，助力你的学习与考证之路</p>
+                <a href="#overview" class="inline-block bg-white text-primary font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all">
+                    了解更多 <i class="fa fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- 平台概述部分 -->
+        <section id="overview" class="mb-16">
+            <!--  section标题 -->
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">平台定位</h2>
+                <!-- 标题下方的装饰线 -->
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <!-- 平台概述内容卡片 -->
+            <div class="bg-white rounded-xl shadow-md p-6 md:p-8 max-w-4xl mx-auto">
+                <p class="text-lg leading-relaxed">
+                    小黑课堂是专业的大学生在线学习平台，专注于计算机二级考证、考研、英语四六级、职场课等领域，
+                    旨在提升大学生职场办公能力，帮助用户学好技能并顺利考证。
+                </p>
+            </div>
+        </section>
+
+        <!-- 课程资源部分 -->
+        <section id="courses" class="mb-16">
+            <!-- section标题 -->
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">课程资源</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <!-- 课程卡片网格布局 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 课程卡片 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fa fa-laptop text-primary text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">计算机二级</h3>
+                        <p class="text-gray-600">提供计算机二级考试相关的直播课、录播课，包含同步训练和模拟考试。</p>
+                    </div>
+                </div>
+                
+                <!-- 课程卡片 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-green-100 flex items-center justify-center">
+                        <i class="fa fa-book text-secondary text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">考研课程</h3>
+                        <p class="text-gray-600">全面的考研复习资料和课程，帮助学生系统备考，提升考研成功率。</p>
+                    </div>
+                </div>
+                
+                <!-- 课程卡片 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <i class="fa fa-language text-purple-500 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">英语四六级</h3>
+                        <p class="text-gray-600">针对英语四六级考试的专项训练，包括听力、阅读、写作等模块。</p>
+                    </div>
+                </div>
+                
+                <!-- 课程卡片 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-yellow-100 flex items-center justify-center">
+                        <i class="fa fa-id-card-o text-yellow-500 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">教师资格证</h3>
+                        <p class="text-gray-600">教师资格证考试相关课程，涵盖理论知识和实践技能培训。</p>
+                    </div>
+                </div>
+                
+                <!-- 课程卡片 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-red-100 flex items-center justify-center">
+                        <i class="fa fa-briefcase text-red-500 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">职场课程</h3>
+                        <p class="text-gray-600">实用的职场技能课程，提升大学生就业竞争力和职场适应能力。</p>
+                    </div>
+                </div>
+                
+                <!-- 课程卡片 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fa fa-pencil text-indigo-500 text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">模拟考试</h3>
+                        <p class="text-gray-600">涵盖所有考点的模拟考试，由一线老师和专家编写，帮助学生熟悉考试。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 软件功能部分 -->
+        <section id="features" class="mb-16">
+            <!-- section标题 -->
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">软件功能</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <!-- 功能列表 - 使用网格布局 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- 功能项 1 -->
+                <div class="flex">
+                    <div class="mr-6 text-primary text-3xl mt-1">
+                        <i class="fa fa-wrench"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">学习工具丰富</h3>
+                        <p class="text-gray-600">提供笔记、测验、错题集等学习工具，帮助用户巩固所学知识。自动记录学习进度，方便用户回顾与复习。</p>
+                    </div>
+                </div>
+                
+                <!-- 功能项 2 -->
+                <div class="flex">
+                    <div class="mr-6 text-primary text-3xl mt-1">
+                        <i class="fa fa-sync"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">跨平台同步</h3>
+                        <p class="text-gray-600">支持多设备登录，学习进度和数据可无缝同步，让学习不受设备限制。</p>
+                    </div>
+                </div>
+                
+                <!-- 功能项 3 -->
+                <div class="flex">
+                    <div class="mr-6 text-primary text-3xl mt-1">
+                        <i class="fa fa-comments"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">社区互动</h3>
+                        <p class="text-gray-600">内置学习社区，用户可以分享学习心得，参与讨论，与其他学习者共同进步。</p>
+                    </div>
+                </div>
+                
+                <!-- 功能项 4 -->
+                <div class="flex">
+                    <div class="mr-6 text-primary text-3xl mt-1">
+                        <i class="fa fa-lightbulb-o"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">个性化推荐</h3>
+                        <p class="text-gray-600">根据用户的学习历史和兴趣偏好，智能推荐相关课程，提供个性化学习体验。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 软件特色部分 -->
+        <section id="highlights" class="mb-16">
+            <!-- section标题 -->
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">软件特色</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <!-- 特色内容卡片 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <!-- 左侧图片区域 -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 flex items-center justify-center">
+                        <img src="https://picsum.photos/seed/study/600/400" alt="学生在线学习场景" class="rounded-lg shadow-md max-w-full h-auto">
+                    </div>
+                    
+                    <!-- 右侧特色列表 -->
+                    <div class="p-8">
+                        <ul class="space-y-6">
+                            <li class="flex">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">严选名师</h3>
+                                    <p class="text-gray-600">拥有专业讲师团队，精选好课，助力学生顺利通过考试。</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                    <i class="fa fa-road"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">个性化学习路径</h3>
+                                    <p class="text-gray-600">用户可根据自己的需求和水平选择不同课程，软件还会基于大数据为每位学员专属定制课件，匹配海量考试数据。</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                    <i class="fa fa-download"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">离线学习</h3>
+                                    <p class="text-gray-600">课程视频支持离线下载，便于用户在无网络环境下学习，且可无限回放。</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
+                                    <i class="fa fa-file-text-o"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">详细解析</h3>
+                                    <p class="text-gray-600">提供详细的解题步骤和清晰的思路，帮助用户提升学习效果，全面掌握解题方法。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- 页脚左侧信息 -->
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-3">
+                        <i class="fa fa-graduation-cap text-primary text-xl"></i>
+                        <h2 class="text-xl font-bold">小黑课堂</h2>
+                    </div>
+                    <p class="text-gray-400 max-w-md">专注于大学生在线学习，助力你的学习与考证之路</p>
+                </div>
+                
+                <!-- 社交媒体图标 -->
+                <div class="flex space-x-6">
+					<p>小文联系方式</p>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-wechat text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-qq text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 版权信息 -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 小黑课堂 版权所有</p>
+				<p>豆包页面编辑 小文修改</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 交互逻辑 -->
+    <script>
+        // 移动端菜单切换功能
+        document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden'); // 切换菜单显示/隐藏
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                // 滚动超过50px时，减小导航栏高度并增加阴影
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+                header.classList.add('shadow');
+            } else {
+                // 滚动小于50px时，恢复导航栏原始样式
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+                header.classList.remove('shadow');
+            }
+        });
+
+        // 平滑滚动到锚点位置
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // 阻止默认跳转行为
+                
+                // 关闭移动端菜单（如果打开）
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                // 获取目标元素并滚动到相应位置
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // 减去导航栏高度，避免被遮挡
+                        behavior: 'smooth' // 平滑滚动效果
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
